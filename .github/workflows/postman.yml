@@ -1,0 +1,16 @@
+name: Newman Run
+
+on:
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  newman:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: matt-ball/newman-action@master
+        with:
+          collection: test/postman_collection.json
+          # environment: test/postman_environment.json
