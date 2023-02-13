@@ -120,6 +120,66 @@
 				"description": "Foods List"
 			},
 			"response": []
+		},
+		{
+			"name": "foods/search2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(4003);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"query\":\"apple, braeburn, raw\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.nal.usda.gov/fdc/v1/foods/search?query=Cheddar%20Cheese&api_key=DEMO_KEY9",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nal",
+						"usda",
+						"gov"
+					],
+					"path": [
+						"fdc",
+						"v1",
+						"foods",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "Cheddar%20Cheese"
+						},
+						{
+							"key": "api_key",
+							"value": "DEMO_KEY9"
+						}
+					]
+				},
+				"description": "Foods List"
+			},
+			"response": []
 		}
 	]
 }
