@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "6164234d-02fa-4566-a4eb-4189ca83adec",
+		"name": "FDC Food Nutrition",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "foods/list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"query\":\"apple, braeburn, raw\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.nal.usda.gov/fdc/v1/foods/list?api_key=DEMO_KEY",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nal",
+						"usda",
+						"gov"
+					],
+					"path": [
+						"fdc",
+						"v1",
+						"foods",
+						"list"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "DEMO_KEY"
+						}
+					]
+				},
+				"description": "Foods List"
+			},
+			"response": []
+		},
+		{
+			"name": "foods/search",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"query\":\"apple, braeburn, raw\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.nal.usda.gov/fdc/v1/foods/search?api_key=DEMO_KEY&query=Cheddar%20Cheese",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nal",
+						"usda",
+						"gov"
+					],
+					"path": [
+						"fdc",
+						"v1",
+						"foods",
+						"search"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "DEMO_KEY"
+						},
+						{
+							"key": "query",
+							"value": "Cheddar%20Cheese"
+						}
+					]
+				},
+				"description": "Foods List"
+			},
+			"response": []
+		}
+	]
+}
